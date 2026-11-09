@@ -1,16 +1,29 @@
 package com.example.StudentRegistration;
 
 public class Student {
+    private int id;
      private String first_name;
      private  String last_name;
      private String email;
      private int age;
 
-    public Student(String first_name, String last_name, String email, int age) {
+    public Student(int id, String first_name, String last_name, String email, int age) {
+        this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
         this.age = age;
+    }
+
+    public Student() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirst_name() {
@@ -46,6 +59,12 @@ public class Student {
     }
 
 
+    public String getFullName(){
+        return  first_name + "" + last_name.trim();
+
+    }
+
+
     @Override
     public String toString() {
         return "Student{" +
@@ -55,5 +74,6 @@ public class Student {
                 ", age=" + age +
                 '}';
     }
+
 
 }
